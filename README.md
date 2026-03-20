@@ -4,7 +4,10 @@ This is a simple repository collecting various packages I've built outside of re
 
 ## g13d
 This is a module that allows control of a Logitech G13 gameboard. It starts `g13d` as a service which can be accessed by piping commands [as explained here](https://github.com/khampf/g13?tab=readme-ov-file#configuring--remote-control). This is a very barebones driver, and has no profile handling or associated logic included. 
+
 This module also includes `g13xml2config`, which can be used to convert Logitech Gaming Software `.xml` config files into `.bind` files for use with the driver.
+
+# Example config
 
 ```nix
 # flake.nix
