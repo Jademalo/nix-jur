@@ -27,7 +27,7 @@ stdenv.mkDerivation {
     patchShebangs $out/bin/g13xml2config
   '';
 
-  meta = with lib; {
+  meta = with pkgs.lib; {
     description = "Logitech G13 XML configuration converter";
     homepage = "https://github.com/khampf/g13";
     license = licenses.mit;
