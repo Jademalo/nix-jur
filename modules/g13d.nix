@@ -10,7 +10,7 @@
   config = lib.mkIf config.services.g13d.enable {
 
     nixpkgs.overlays = [
-      # Load derevation and add the package to nixpkgs
+      # Load derivation and add the package to nixpkgs
       (final: prev: {
         g13d = prev.callPackage ./../pkgs/g13d/package.nix {};
         g13xml2config = prev.callPackage ./../pkgs/g13xml2config/package.nix {};
@@ -44,7 +44,7 @@
 
     environment.systemPackages = with pkgs; [
       g13xml2config 
-      ];
+    ];
 
   };
 

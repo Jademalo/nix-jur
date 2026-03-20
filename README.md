@@ -3,10 +3,11 @@
 This is a simple personal flake collecting various packages I've built outside of regular `nixpkgs`. I make no guarantee that this is kept up to date, but I thought I would keep it public in case it comes in handy for someone else.
 
 ### Overlays
-- `g13gui`
+None at the moment
 
 ### Modules
 - `g13d`
+- `g13gui`
 
 ## g13d
 This is a module from [khampf/g13](https://github.com/khampf/g13) that allows control of a Logitech G13 gameboard. It starts `g13d` as a service which can be accessed by piping commands [as explained here](https://github.com/khampf/g13?tab=readme-ov-file#configuring--remote-control). This is a very barebones driver, and has no profile handling or associated logic included. 
@@ -35,19 +36,21 @@ This is a variant fork of the original `g13d` project from [jtgans/g13gui](https
       modules = [
         ./configuration.nix
         nix-jur.nixosModules.g13d
+        nix-jur.nixosModules.g13gui
 
-          nixpkgs.overlays = [
+          #nixpkgs.overlays = [
             #nix-jur.overlays.g13gui
-          ];
+          #];
           
-          environment.systemPackages = with pkgs; [
+          #environment.systemPackages = with pkgs; [
             #g13gui
-          ];
+          #];
         
           services.g13d = {
             enable = true;
             clock.enable = true;
           };
+          #jur.g13gui.enable = true;
 
       ];
     };
