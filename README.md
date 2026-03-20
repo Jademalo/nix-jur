@@ -1,9 +1,9 @@
 # Jade's Nix User Repository
 
-This is a simple repository collecting various packages I've built outside of regular `nixpkgs`
+This is a simple personal flake collecting various packages I've built outside of regular `nixpkgs`. I make no guarantee that this is kept up to date, but I thought I would keep it public in case it comes in handy for someone else.
 
 ## g13d
-This is a module that allows control of a Logitech G13 gameboard. It starts `g13d` as a service which can be accessed by piping commands [as explained here](https://github.com/khampf/g13?tab=readme-ov-file#configuring--remote-control). This is a very barebones driver, and has no profile handling or associated logic included. 
+This is a module from [khampf/g13](https://github.com/khampf/g13) that allows control of a Logitech G13 gameboard. It starts `g13d` as a service which can be accessed by piping commands [as explained here](https://github.com/khampf/g13?tab=readme-ov-file#configuring--remote-control). This is a very barebones driver, and has no profile handling or associated logic included. 
 
 This module also includes `g13xml2config`, which can be used to convert Logitech Gaming Software `.xml` config files into `.bind` files for use with the driver.
 
