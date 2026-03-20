@@ -22,7 +22,7 @@ This module also includes `g13xml2config`, which can be used to convert Logitech
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-        nix-jur.nixosModules.g13
+        nix-jur.nixosModules.g13d
 
           #nixpkgs.overlays = [
             #nix-gaming-edge.overlays.default

@@ -28,7 +28,7 @@
     }; */
 
     nixosModules = {
-      g13 = import ./modules/g13d.nix;                                                # Importing the module for the g13 service
+      g13d = import ./modules/g13d.nix;                                                # Importing the module for the g13 service
     };
   };
 
