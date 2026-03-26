@@ -35,6 +35,7 @@ stdenv.mkDerivation {
     cp "$src/clock.sh" "$out/bin/g13-clock.sh"
     substituteInPlace $out/bin/g13-clock.sh --replace-fail './pbm2lpbm' 'pbm2lpbm'
     substituteInPlace $out/bin/g13-clock.sh --replace-fail 'convert' 'magick'
+    substituteInPlace $out/bin/g13-clock.sh --replace-fail 'Courier' 'Courier-New'
     wrapProgram $out/bin/g13-clock.sh --prefix PATH : "$out/bin:${
       pkgs.lib.makeBinPath [
         pkgs.bc
