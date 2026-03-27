@@ -2,11 +2,11 @@
 
 {
 
-  options.jur.g13gui = {
+  options.programs.g13gui = {
     enable = lib.mkEnableOption "Logitech G13 GUI";
   };
 
-  config = lib.mkIf config.jur.g13gui.enable {
+  config = lib.mkIf config.programs.g13gui.enable {
 
     nixpkgs.overlays = [
       # Load derivation and add the package to nixpkgs

@@ -50,7 +50,7 @@ This is a variant fork of the original `g13d` project from [jtgans/g13gui](https
             enable = true;
             clock.enable = true;
           };
-          #jur.g13gui.enable = true;
+          #programs.g13gui.enable = true;
 
       ];
     };
