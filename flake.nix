@@ -30,9 +30,15 @@
          };
       */
 
-      nixosModules = {
+      nixosModules = rec {
         g13d = import ./modules/g13d.nix; # Importing the module for the g13 service
         g13gui = import ./modules/g13gui.nix; # Importing the module for the g13gui tool with necessary udev rule
+        default = { ... }: {
+          imports = [ 
+            g13d 
+            g13gui 
+          ];
+        };
       };
     };
 

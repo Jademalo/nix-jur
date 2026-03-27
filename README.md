@@ -35,8 +35,9 @@ This is a variant fork of the original `g13d` project from [jtgans/g13gui](https
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-        nix-jur.nixosModules.g13d
-        nix-jur.nixosModules.g13gui
+        nix-jur.nixosModules.default
+        #nix-jur.nixosModules.g13d
+        #nix-jur.nixosModules.g13gui
 
           #nixpkgs.overlays = [
             #nix-jur.overlays.g13gui
