@@ -18,17 +18,19 @@
     in
     {
 
-      /*
         packages.${pkgs.stdenv.hostPlatform.system} = {
-           g13gui = pkgs.callPackage ./pkgs/g13gui/package.nix {};                          # Adding the package to the flake's packages
-         };
+          hdr-toggle = pkgs.callPackage ./pkgs/hdr-toggle/package.nix {};                          # Adding the package to the flake's packages
+        };
 
-         overlays = {
-           g13gui = final: prev: {                                                          # Name of the overlay to be called
-             g13gui = self.packages.${final.stdenv.hostPlatform.system}.g13gui;             # The package that gets used for that overlay
-           };
-         };
-      */
+        overlays = {
+          default = final: prev: {
+            hdr-toggle = self.packages.${final.stdenv.hostPlatform.system}.hdr-toggle;
+          };
+          hdr-toggle = final: prev: {                                                              # Name of the overlay to be called
+            hdr-toggle = self.packages.${final.stdenv.hostPlatform.system}.hdr-toggle;             # The package that gets used for that overlay
+          };
+        };
+
 
       nixosModules = rec {
         g13d = import ./modules/g13d.nix; # Importing the module for the g13 service

@@ -17,6 +17,9 @@ This module also includes `g13xml2config`, which can be used to convert Logitech
 ## g13gui
 This is a variant fork of the original `g13d` project from [jtgans/g13gui](https://github.com/jtgans/g13gui), which includes a GUI configuration tool. Even though they both are forks of the same project, the functionality differs to the above driver as it has been rewritten from scratch in Python.
 
+## hdr-toggle
+This is a simple HDR toggle script for KDE Plasma from [cryptomilk/hdr-toggle](https://codeberg.org/cryptomilk/hdr-toggle). It can also be used as a wrapper around other applications, such as steam games with `hdr-toggle %command%`
+
 # Example config
 
 ```nix
@@ -39,12 +42,13 @@ This is a variant fork of the original `g13d` project from [jtgans/g13gui](https
         #nix-jur.nixosModules.g13d
         #nix-jur.nixosModules.g13gui
 
-          #nixpkgs.overlays = [
-            #nix-jur.overlays.g13gui
-          #];
+          nixpkgs.overlays = [
+            nix-jur.overlays.default
+            #nix-jur.overlays.hdr-toggle
+          ];
           
           #environment.systemPackages = with pkgs; [
-            #g13gui
+            #hdr-toggle
           #];
         
           services.g13d = {
