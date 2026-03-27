@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
 
@@ -11,7 +16,7 @@
     nixpkgs.overlays = [
       # Load derivation and add the package to nixpkgs
       (final: prev: {
-        g13gui = prev.callPackage ./../pkgs/g13gui/package.nix {};
+        g13gui = prev.callPackage ./../pkgs/g13gui/package.nix { };
       })
     ];
 

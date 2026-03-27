@@ -19,7 +19,7 @@ stdenv.mkDerivation {
   nativeBuildInputs = [
     pkgs.python3
   ];
-  
+
   installPhase = ''
     mkdir -p $out/bin
     cp g13xml2config $out/bin/g13xml2config
